@@ -5,13 +5,18 @@
 <div class="jumbotron">
     <h1>Hidayat WEB</h1>
     <p class="lead">Do what you love and love what you do</p>
-    
+    @Html.Partial("_LoginPartial")
+
+    @if (Session["UserId"] != null)
+    {
+        <h4>Hello @Session["Username"].ToString()</h4>
+    }
 
 </div>
 <p>
     @using (Html.BeginForm("Index","Categories", FormMethod.Get))
     {
-        <input type="text" name="@("SearchString")" placeholder="Search..." />
+        <input type="text" name="@("SearchString")" placeholder="Pencarian..." />
             <button type="submit" class="btn btn-info">
                 <span class="glyphicon glyphicon-search"></span> Search
             </button>

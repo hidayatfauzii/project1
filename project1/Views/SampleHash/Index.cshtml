@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Login Form</h2>
+<form method="post" action="@Url.Action("Index","SampleHash")">
+    <label for="password">Password</label>
+    <br />
+    <input type="password" name="password"/>
+    <br />
+    <input type="submit" value="submit" />
+</form>
+
+<br />
+Hasil Hash dari password: @ViewBag.HasilHash
